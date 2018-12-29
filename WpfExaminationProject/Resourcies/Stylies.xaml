@@ -1,0 +1,111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfExaminationProject.Resourcies">
+
+    <Style x:Key="White">
+        <Setter Property="Control.Foreground" Value="White"></Setter>
+    </Style>
+
+    <Style x:Key="BlackAndWhite" BasedOn="{StaticResource White}">
+        <Setter Property="Control.Background" Value="Black"></Setter>
+    </Style>
+
+    <Style x:Key="cbxImage"  TargetType="{x:Type Image}">
+        <Setter Property="Height" Value="12"/>
+    </Style>
+
+    <Style x:Key="newButton" TargetType="Button">
+        <Setter Property="Control.Margin" Value="5,0"/>
+        <Setter Property="Control.Padding" Value="5,0"/>
+        <Setter Property="Control.Height" Value="30"/>
+        <Setter Property="Control.FontSize" Value="14"/>
+        <Setter Property="Control.BorderThickness" Value="0"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="newLable" TargetType="Label">
+        <Setter Property="Control.Margin" Value="0,5,5,5"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="titleLable" TargetType="Label">
+        <Setter Property="Control.Margin" Value="20,15"/>
+        <Setter Property="Control.FontFamily" Value="Arial"/>
+        <Setter Property="Control.FontSize" Value="16"/>
+    </Style>
+
+    <Style x:Key="bindingWPLable" TargetType="Label">
+        <Setter Property="Control.FontSize" Value="10"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="WPLable" TargetType="Label" BasedOn="{StaticResource bindingWPLable}">
+        <Setter Property="Control.Margin" Value="10,0,0,0"/>
+        <Setter Property="Control.FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="WPLable2" TargetType="Label">
+        <Setter Property="Control.FontSize" Value="20"/>
+        <Setter Property="Control.FontFamily" Value="Verdana"/>
+    </Style>
+
+    <Style x:Key="headTabItem" TargetType="TabItem">
+        <Setter Property="Control.FontSize" Value="18"/>
+    </Style>
+
+    <Style x:Key="newComboBox" TargetType="ComboBox">
+        <Setter Property="Control.Margin" Value="50,5"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+        <Setter Property="Control.VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Key="newCheckBox" TargetType="CheckBox">
+        <Setter Property="Control.Margin" Value="52,12"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="newTextBox" TargetType="TextBox">
+       
+        <Setter Property="Control.FontSize" Value="12"/>
+       
+    </Style>
+
+    <Style x:Key="newWrapPanel" TargetType="WrapPanel">
+        <Setter Property="Control.Height" Value="24"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style TargetType="ListBoxItem" BasedOn="{StaticResource BlackAndWhite}">
+        <Setter Property="Control.Padding" Value="10, 5"></Setter>
+        <Setter Property="Control.BorderBrush" Value="Gray"></Setter>
+
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="True">
+                <Setter Property="Control.Background" Value="Yellow"/>
+                <Setter Property="Control.Foreground" Value="Black" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style  x:Key="AddButton" TargetType="Button">
+        <Setter Property="Control.Height" Value="30"/>
+        <Setter Property="Control.Width" Value="120"/>
+        <Setter Property="Control.Margin" Value="10, 20"/>
+        <Setter Property="Control.Background" Value="#0E8F1F"/>
+        <Setter Property="Control.Foreground" Value="#EEF0EE"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Left"/>
+
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="True">
+                <Setter Property="Control.Background" Value="Yellow"/>
+                <Setter Property="Control.Foreground" Value="Black" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+   
+
+</ResourceDictionary>

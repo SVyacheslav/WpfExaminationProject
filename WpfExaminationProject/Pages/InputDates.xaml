@@ -1,0 +1,159 @@
+﻿<Page x:Class="WpfExaminationProject.Pages.InputDates"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfExaminationProject.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InputDates">
+
+    <Grid>
+        <StackPanel Background="Beige">
+            <TabControl >
+                <TabItem Header="Детали" Style="{StaticResource headTabItem}">
+                    <Border Background="Beige">
+                        <StackPanel>
+                            <Label Style="{StaticResource titleLable}">Детали</Label>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="24*"></ColumnDefinition>
+                                    <ColumnDefinition Width="283*"/>
+                                    <ColumnDefinition Width="487*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource newLable}">Гаражный номер машины</Label>
+                                <TextBox x:Name="lbintGarageRoom" Grid.Column="2" Grid.Row="0" Margin="50,5" Style="{StaticResource newTextBox}"/>
+                                <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource newLable}">Производитель</Label>
+                                <ComboBox Grid.Column="2" Grid.Row="1" SelectedIndex="0" Style="{StaticResource newComboBox}"
+                                          Name="lbManufacturer" DisplayMemberPath="strName" SelectedValuePath="intManufacturerID">
+                                </ComboBox>
+                                <Label Grid.Column="1" Grid.Row="2" Style="{StaticResource newLable}">Модель машины</Label>
+                                <ComboBox SelectedIndex="0" Grid.Column="2" Grid.Row="2" Style="{StaticResource newComboBox}" 
+                                          Name="lbModel" DisplayMemberPath="strName" SelectedValuePath="intModelID">
+                                </ComboBox>
+                                <Label Grid.Column="1" Grid.Row="3" Style="{StaticResource newLable}">Год Выпуска</Label>
+                                <TextBox x:Name="lbstrManufYear" Grid.Column="2" Grid.Row="3" Margin="50,5" Style="{StaticResource newTextBox}"/>
+                                <Label Grid.Column="1" Grid.Row="4" Style="{StaticResource newLable}">Префикс</Label>
+                                <ComboBox Grid.Column="2" Grid.Row="4" SelectedIndex="0" Style="{StaticResource newComboBox}" 
+                                          Name="lbPrefix" DisplayMemberPath="strPrefix" SelectedValuePath="intSNPrefixID">
+                                </ComboBox>
+                                <Label Grid.Column="1" Grid.Row="5" Style="{StaticResource newLable}">Серийный номер машины</Label>
+                                <TextBox x:Name="lbstrSerialNo" Grid.Column="2" Grid.Row="5" Margin="50,5" Style="{StaticResource newTextBox}"/>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Использование" Style="{StaticResource headTabItem}">
+                    <StackPanel Background="Beige">
+                        <Label  Style="{StaticResource titleLable}">Последняя запись</Label>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="313*"></ColumnDefinition>
+                                <ColumnDefinition Width="481*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource newLable}">Дата последней записи</Label>
+                            <DatePicker x:Name="lbLastDate" Grid.Column="1" Grid.Row="0"  Margin="52,6,107,5" VerticalAlignment="Center" Height="26" FontSize="12" RenderTransformOrigin="0.516,1.133"/>
+                            <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource newLable}">Последние мото-часы</Label>
+                            <TextBox x:Name="lbintLastMetered" Grid.Column="1" Grid.Row="1" Margin="52,10,107,5" Style="{StaticResource newTextBox}"></TextBox>
+                            <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource newLable}">Общая наработка</Label>
+                            <TextBox x:Name="lbintTotalMetered" Grid.Column="1" Grid.Row="2" Margin="52,5,107,10" Style="{StaticResource newTextBox}"/>
+                            <Label Grid.Column="0" Grid.Row="3" Style="{StaticResource newLable}">Активная</Label>
+                            <CheckBox x:Name="chbbitActive" Grid.Column="1" Grid.Row="3" Style="{StaticResource newCheckBox}"/>
+                            <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource newLable}">КТГ</Label>
+                            <CheckBox x:Name="chbbitKTG"  Grid.Column="1" Grid.Row="4" Style="{StaticResource newCheckBox}"/>
+                            <Label Grid.Column="0" Grid.Row="5" Style="{StaticResource newLable}">Консервация</Label>
+                            <CheckBox x:Name="chbbitPreservation" Grid.Column="1" Grid.Row="5" Style="{StaticResource newCheckBox}"/>
+                            <Label Grid.Column="0" Grid.Row="6" Style="{StaticResource newLable}">Моточасы</Label>
+                            <CheckBox x:Name="chbbitMeter"  Grid.Column="1" Grid.Row="6" Style="{StaticResource newCheckBox}"/>
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Амортизация" Style="{StaticResource headTabItem}">
+                    <StackPanel Background="Beige" Height="300">
+                        <StackPanel>
+                            <Label Style="{StaticResource titleLable}">Настройка амортизации</Label>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="176*"></ColumnDefinition>
+                                <ColumnDefinition Width="221*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Style="{StaticResource newLable}" Grid.Column="0" Grid.Row="0">Вид амортизации</Label>
+                            <CheckBox x:Name="chbbitMethodAmortization" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="49,12,0,12"></CheckBox>
+                            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"  HorizontalAlignment="Left">
+                                <Border Margin="20,0,20,0" Background="#D0FBC5" Width="766" >
+                                    <Grid Width="776">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Margin="10,0" FontSize="12" Foreground="Green">
+                                            <Span>
+                                                <Bold>1-ый</Bold>
+                                                Линейный метод амортизации - "Галочка" отмечена
+                                            </Span>
+                                        </Label>
+                                        <Label Grid.Row="1" Margin="10,0" FontSize="12" Foreground="Green">
+                                            <Span>
+                                                <Bold>2-ой</Bold>
+                                                Метод уменьшаемого остатка - "Галочка" неотмечена
+                                            </Span>
+                                        </Label>
+                                    </Grid>
+                                </Border>
+
+                            </StackPanel>
+                            <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource newLable}">Полная стоимость</Label>
+                            <TextBox x:Name="lbfloatFullPrice" Grid.Column="1" Grid.Row="2" Margin="50,5,50,5" Style="{StaticResource newTextBox}"/>
+                            <Label Grid.Column="0" Grid.Row="3" Style="{StaticResource newLable}">Срок службы (лет)</Label>
+                            <TextBox x:Name="lbintServiceLife" Grid.Column="1" Grid.Row="3" Margin="50,5,50,5" Style="{StaticResource newTextBox}"/>
+                            <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource newLable}">Коэфициент ускорения</Label>
+                            <TextBox x:Name="lbintHoweverOddsAcceleration" Grid.Column="1" Grid.Row="4" Margin="50,5,50,5" Style="{StaticResource newTextBox}"/>
+                            <Label Grid.Column="0" Grid.Row="5" Style="{StaticResource newLable}">Дата ввода в эксплуатацию</Label>
+                            <DatePicker x:Name="lbdateStartUpDate" Grid.Column="1" Grid.Row="5" Margin="50,7,50,5" VerticalAlignment="Center" Height="27" FontSize="12" RenderTransformOrigin="0.506,0.37"></DatePicker>
+                        </Grid>
+                    </StackPanel>
+
+                </TabItem>
+            </TabControl>
+            <Border HorizontalAlignment="Right" Width="240" BorderBrush="Coral" Margin="0,10,10,10">
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" >
+                    <Button Style="{StaticResource newButton}" Background="LightGray" Foreground="Gray" Click="Button_Click">Close</Button>
+                    <Button Style="{StaticResource newButton}" Background="#4d74d1" Foreground="White" Click="Button_Click_1">Добавить</Button>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
